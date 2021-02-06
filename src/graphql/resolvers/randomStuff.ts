@@ -7,12 +7,4 @@ export class RandomStuffResolver {
     greeting() {
         return null;
     }
-
-    @Query(() => [GraphQLString])
-    interestingUrls() {
-        return [
-            'https://google.com',
-            'https://facebook.com'
-        ]
-    }
 }
