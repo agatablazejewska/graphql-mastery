@@ -2,13 +2,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 import 'reflect-metadata';
 import { ApolloServer } from 'apollo-server';
-import { buildSchema } from 'type-graphql';
-import { RandomStuffResolver } from './graphql/resolvers/randomStuff';
+import createSchema from './graphql';
 
 const mount = async () => {
-    const schema = await buildSchema({
-        resolvers: [RandomStuffResolver],
-    });
+    const schema = await createSchema();
 
     const server = new ApolloServer({ schema });
 
